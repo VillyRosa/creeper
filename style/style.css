@@ -1,90 +1,122 @@
-*{
+* {
     padding: 0;
     margin: 0;
-    text-decoration: none;
     box-sizing: border-box;
 }
 
-body{
+body {
+    width: 100%;
+    height: 100vh;
+
+    padding: 16px;
+    overflow: hidden;
+    background-image: url('../images/background.png');
+    background-size: cover;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background: url(../images/background.jpg);
-    overflow: hidden
 }
 
-.egg {
+button {
     cursor: pointer;
+    background-color: transparent;
+    border: none;
 }
 
-main{
+.creeper {
     width: 500px;
     height: 500px;
+
+    padding: 80px 60px;
     background-color: #3DAE30;
-    box-shadow: 0 0 100px black;
-    border: 5px solid black;
     border-radius: 8px;
+    border: 6px solid #000;
+
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    cursor: pointer;
 }
 
-main .eyes {
-    /* background-color: red; */
-    width: 100%;
-    height: 220px;
+.creeper .attribute {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.creeper .attribute.eyesBox { width: 100%; }
+.creeper .attribute.mouthBox { width: 100%; }
+
+.creeper .attribute.eyesBox .eye {
+    width: 130px;
+    height: 130px;
+    background-color: #000;
+}
+
+.creeper .attribute.mouthBox {
+    height: 470px;
+    justify-content: center;
     align-items: flex-end;
 }
 
-main .eyes .eye{
-    background-color: black;
-    width: 130px;
-    height: 130px;
-}
-
-main .container-mouth {
-    /* background-color: blue; */
-    width: 100%;
-    height: 280px;
-    display: flex;
-    justify-content: center;
-}
-
-main .container-mouth .mouth-center {
-    background-color: black;
-    width: 120px;
-    height: 150px;
-}
-
-main .container-mouth .mouth {
-    background-color: black;
+.creeper .attribute.mouthBox .mouth {
     width: 90px;
-    height: 150px;
-    align-self: center;
+    height: 130px;
+    background-color: #000000;
+}
+
+.creeper .attribute.mouthBox .nose {
+    width: 108px;
+    height: 130px;
+    background-color: #000;
+    align-self: flex-start;
+}
+
+.explode {
+    animation: explode 5s ease;
+}
+
+.egg1Animate {
+    animation: egg-1 2s ease;
+}
+
+.egg2Animate {
+    animation: egg-2 2s ease;
+}
+
+.hidden { display: none; }
+
+@media (max-width: 640px) {
+    .creeper {
+        width: 350px;
+        height: 350px;
+        padding: 56px 42px;
+    }
+    .creeper .attribute.eyesBox .eye {
+        width: 91px;
+        height: 91px;
+    }
+    .creeper .attribute.mouthBox .mouth {
+        width: 63px;
+        height: 91px;
+        background-color: #000000;
+    }
+    .creeper .attribute.mouthBox .nose {
+        width: 77px;
+        height: 91px;
+        background-color: #000;
+        align-self: flex-start;
+    }
 }
 
 @keyframes explode {
     from {
-        width: 500px;
-        height: 500px;
+        transform: scale(1);
     }
-
-    70% {
-        background-color: #3dae305e;
-    }
-
-    80% {
-        background-color: #ffffff5e;
-    }
-
     to {
-        width: 1000px;
-        height: 1000px;
-        background-color: #ffffff5e;
+        transform: scale(5);
+        background-color: #ffffff87;
     }
 }
 

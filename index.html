@@ -5,21 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creeper</title>
+    <link rel="shortcut icon" href="./images/egg.png" type="image/x-icon">
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
     
-    <main onclick="explode()">
-        <div class="eyes">
-            <div class="eye" id="eye-left"></div>
-            <div class="eye" id="eye-right"></div>
+    <button class="creeper" id="creeper">
+        <div class="attribute eyesBox">
+            <div class="eye"></div>
+            <div class="eye"></div>
         </div>
-        <div class="container-mouth">
-            <div class="mouth" id="mouth-left"></div>
-            <div class="mouth-center" id="mouth-center"></div>
-            <div class="mouth" id="mouth-right"></div>
+        <div class="attribute mouthBox">
+            <div class="mouth"></div>
+            <div class="nose"></div>
+            <div class="mouth"></div>
         </div>
-    </main>
+    </button>
+
+    <button class="hidden" id="egg"><img src="./images/egg.png" alt="btn-egg"></button>
 
     <script src="js/script.js"></script>
 </body>
