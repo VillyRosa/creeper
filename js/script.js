@@ -3,14 +3,18 @@ const creeper = document.querySelector('#creeper');
 const egg = document.querySelector('#egg');
 let eggIsClickable = true;
 let eggClicks = 0;
+let creeperIsClickable = true;
 
 creeper.addEventListener('click', () => {
+    if (!creeperIsClickable) return;
+    creeperIsClickable = false;
     toggleClass(creeper, 'explode');
     explodeSound.play();
     setTimeout(() => {
         toggleClass(creeper, 'hidden');
         toggleClass(creeper, 'explode');
         toggleClass(egg, 'hidden');
+        creeperIsClickable = true;
     }, 4000);
 });
 
